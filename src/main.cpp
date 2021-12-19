@@ -10,7 +10,7 @@
 #define ETH_ADDR        0
 #define ETH_MDC_PIN     23
 #define ETH_MDIO_PIN    18
-//#define ETH_PHY_RESET   32
+
 // global variables
 byte ethernetStatus = -1;
 const char* host = "ESP32Init";
