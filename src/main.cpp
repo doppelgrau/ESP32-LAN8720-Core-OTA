@@ -5,12 +5,12 @@
 #include <Update.h>
 
 // Ethernet
-#define ETH_POWER_PIN   -1
+#define ETH_POWER_PIN   32
 #define ETH_TYPE        ETH_PHY_LAN8720
 #define ETH_ADDR        0
 #define ETH_MDC_PIN     23
 #define ETH_MDIO_PIN    18
-#define ETH_PHY_RESET   32
+//#define ETH_PHY_RESET   32
 // global variables
 byte ethernetStatus = -1;
 const char* host = "ESP32Init";
@@ -64,13 +64,6 @@ void EtherEvent(WiFiEvent_t event) {
 void setup() {
   // debug
     Serial.begin(115200);
-
-  // enable the LAN8720
-  pinMode(ETH_PHY_RESET, OUTPUT);
-  digitalWrite(ETH_PHY_RESET, LOW);
-  delay(5);
-  digitalWrite(ETH_PHY_RESET, HIGH);
-  delay(2);
 
   // Start Network
   WiFi.onEvent(EtherEvent);
